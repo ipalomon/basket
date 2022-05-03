@@ -1,4 +1,4 @@
 package app.basket.model;
 
-public class BasketModel {
+public class Basket {
 }
