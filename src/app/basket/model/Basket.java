@@ -7,7 +7,7 @@ import app.product.model.Product;
 public class Basket {
     private int basketId;
     private int userId;
-    // product, productQuantity
+    // Product, productQuantity
     private HashMap<Product, Double> productsListBasket;
 
     public Basket(int basketId, int userId, HashMap<Product, Double> productsListBasket) {
