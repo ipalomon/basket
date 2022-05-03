@@ -2,13 +2,15 @@ package app.basket.model;
 
 import java.util.HashMap;
 
+import app.product.model.ProductModel;
+
 public class Basket {
     private int basketId;
     private int userId;
-    // productId, productQuantity
-    private HashMap<Integer, Double> productsListBasket;
+    // product, productQuantity
+    private HashMap<ProductModel, Double> productsListBasket;
 
-    public Basket(int basketId, int userId, HashMap<Integer, Double> productsListBasket) {
+    public Basket(int basketId, int userId, HashMap<ProductModel, Double> productsListBasket) {
         this.basketId = basketId;
         this.userId = userId;
         this.productsListBasket = new HashMap<>();
@@ -22,7 +24,7 @@ public class Basket {
         return this.userId;
     }
 
-    public HashMap<Integer, Double> getProductsListBasket() {
+    public HashMap<ProductModel, Double> getProductsListBasket() {
         return this.productsListBasket;
     }
 
@@ -34,7 +36,7 @@ public class Basket {
         this.userId = userId;
     }
 
-    public void addProductToBasket(Integer productId, Double productQuantity) {
-        this.productsListBasket.put(productId, productQuantity);
+    public void addProductToBasket(ProductModel product, Double productQuantity) {
+        this.productsListBasket.put(product, productQuantity);
     }
 }
