@@ -39,4 +39,12 @@ public class Basket {
     public void addProductToBasket(Product product, Double productQuantity) {
         this.productsListBasket.put(product, productQuantity);
     }
+
+    public void deleteProductFromBasket(Product product) {
+        this.productsListBasket.remove(product);
+    }
+
+    public void changeQuantityOfProduct(Product product, Double quantity) {
+        this.productsListBasket.replace(product, quantity);
+    }
 }
