@@ -1,4 +1,23 @@
 package app.product.controller;
 
+import app.product.model.Product;
+
+import java.util.ArrayList;
+
 public class ProductController {
+    static ArrayList<Product> products = new ArrayList<>();
+
+    public static ArrayList<Product> createFakeProducts() {
+        Product product1 = new Product(1, "Car", "The blue car", 1200.45);
+        Product product2 = new Product(1, "Bicycle", "The urban bicycle", 40.45);
+        Product product3 = new Product(1, "Scooter", "The mountain scooter", 1200.45);
+        Product product4 = new Product(1, "Boat", "The resistant coat boat", 1200.45);
+
+        products.add(product1);
+        products.add(product2);
+        products.add(product3);
+        products.add(product4);
+
+        return products;
+    }
 }
