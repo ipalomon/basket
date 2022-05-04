@@ -7,8 +7,11 @@ import app.product.model.Product;
 public class Basket {
     private int basketId;
     private int userId;
-    // Product, productQuantity
+    // productId, productQuantity
     private HashMap<Product, Double> productsListBasket;
+
+    public Basket() {
+    }
 
     public Basket(int basketId, int userId, HashMap<Product, Double> productsListBasket) {
         this.basketId = basketId;
@@ -40,10 +43,11 @@ public class Basket {
         this.productsListBasket.put(product, productQuantity);
     }
 
+    // TODO delete basket from user need the user id
     public void deleteProductFromBasket(Product product) {
         this.productsListBasket.remove(product);
     }
-
+    // TODO need the user id
     public void changeQuantityOfProduct(Product product, Double quantity) {
         this.productsListBasket.replace(product, quantity);
     }
