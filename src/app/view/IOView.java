@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class IOView {
     public static void callMainMenu(){
         Scanner reader = new Scanner(System.in);
+
         while(true){
             Menu.mainMenu();
             int command = UtilitiesView.askInteger(reader, "Chose option?");

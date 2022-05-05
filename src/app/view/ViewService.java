@@ -12,6 +12,7 @@ public class ViewService {
     public static void loopProductDetail(Scanner reader, Product product){
         // Call the ViewController for load the fake data from ProductController
         // TODO load product detail from product controller by fake data
+        String productQuantityStr = "1";
         int productQuantity = 1;
         while (true){
             System.out.println("Id: " + product.getProductId());
@@ -19,8 +20,11 @@ public class ViewService {
             System.out.println("Description: " + product.getDescription());
             System.out.println("Price: " + product.getPrice());
             System.out.println("Amount: " + product.getProductTotalAmount());
-            Menu.menuProductDetail();
-            productQuantity = UtilitiesView.askInteger(reader, "Quantity?");
+
+            productQuantityStr = UtilitiesView.ask(reader, "Quantity? " + productQuantity);
+            if(productQuantityStr.equals("")){
+                productQuantity = 1;
+            }
             if( productQuantity > 1){
                 product.setProductTotalAmount(productQuantity * product.getPrice());
                 System.out.println(" New amount: " + product.getProductTotalAmount());
@@ -29,7 +33,8 @@ public class ViewService {
                     System.out.println("Quantity match be greater than 0 ");
                 }
             }
-            int command = UtilitiesView.askInteger(reader, "Write option?");
+            Menu.menuProductDetail();
+            int command = UtilitiesView.askInteger(reader, "Chose 0 Add to basket or 1 return");
             if(command == 1){
                 break;
             }else{
@@ -45,7 +50,7 @@ public class ViewService {
     // Load the product list
     // Call de menu option for a product list: Add to basket or return to back menu
     public static void loopMenuProductList(Scanner reader){
-        ViewService.loopMenuProductList(reader);
+
         while (true){
             // Call the ViewController for load the fake data from ProductController
             HashMap<Integer,Product> products = createFakeProducts();
