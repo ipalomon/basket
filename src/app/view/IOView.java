@@ -1,6 +1,7 @@
 package app.view;
 
 import app.product.model.Product;
+import app.tests.ProductTest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +27,7 @@ public class IOView {
                 System.out.println("Not implemented jet.");
             } else if(command == 0){
                 // Test
+                ProductTest.productTest();
             } else System.out.println("Unknown command");
         }
     }
