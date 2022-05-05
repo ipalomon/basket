@@ -7,4 +7,9 @@ public class UtilitiesView {
         System.out.println(string);
         return reader.nextLine();
     }
+
+    public static Integer askInteger(Scanner reader, String string) {
+        System.out.println(string);
+        return Integer.valueOf(reader.nextLine());
+    }
 }

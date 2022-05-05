@@ -11,19 +11,19 @@ public class IOView {
 
         while(true){
             Menu.mainMenu();
-            String command = UtilitiesView.ask(reader, "Write option?");
-            if (command.equals("quit")) {
+            int command = UtilitiesView.askInteger(reader, "Chose option?");
+            if (command == 0) {
                 break;
-            } else if (command.equals("Test")) {
+            } else if (command == 1) {
                 //We create this feature to test our soft
                 //UserTest.userTest();
-            } else if (command.equals("Product list")) {
+            } else if (command == 2) {
                 //call the loop product list by user
                 loopMenuProductList(reader);
-            } else if(command.equals("View basket")){
+            } else if(command == 3){
                 //call the loop view basket by user
                 // TODO loopViewBasket
-            } else if(command.equals("Purchased")){
+            } else if(command == 4){
                 //call the view purchased by user
                 // TODO viewPurchased
                 System.out.println("Not implemented jet.");
