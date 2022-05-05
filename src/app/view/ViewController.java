@@ -3,11 +3,11 @@ package app.view;
 import app.product.controller.ProductController;
 import app.product.model.Product;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ViewController {
-    public static ArrayList<Product> createFakeProducts(){
-        ArrayList<Product> products = ProductController.createFakeProducts();
+    public static HashMap<Integer,Product> createFakeProducts(){
+        HashMap<Integer,Product> products = ProductController.createFakeProducts();
         return products;
     }
 }
