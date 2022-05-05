@@ -5,15 +5,25 @@ public final class Product {
     private String name;
     private String description;
     private double price;
+    private double productTotalAmount;
 
     public Product() {
     }
 
-    public Product(int productId, String name, String description, double price) {
+    public Product(int productId, String name, String description, double price, double productTotalAmount) {
         this.productId = productId;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.productTotalAmount = productTotalAmount;
+    }
+
+    public double getProductTotalAmount() {
+        return productTotalAmount;
+    }
+
+    public void setProductTotalAmount(double productTotalAmount) {
+        this.productTotalAmount = productTotalAmount;
     }
 
     public int getProductId() {

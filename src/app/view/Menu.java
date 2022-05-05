@@ -20,8 +20,8 @@ public class Menu {
 
     public static void menuProductDetail(){
         System.out.println("Product detail");
-        System.out.println("4-Add to basket.");
-        System.out.println("4-Return.");
+        System.out.println("0-Add to basket.");
+        System.out.println("1-Return.");
     }
 
     public static void menuBasket(){

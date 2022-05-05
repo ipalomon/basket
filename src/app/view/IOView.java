@@ -65,7 +65,34 @@ public class IOView {
     public static void loopProductDetail(Scanner reader, Product product){
         // Call the ViewController for load the fake data from ProductController
         // TODO load product detail from product controller by fake data
-        Menu.menuProductDetail();
+        int productQuantity = 1;
+        while (true){
+            System.out.println("Id: " + product.getProductId());
+            System.out.println("Name: " + product.getName());
+            System.out.println("Description: " + product.getDescription());
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("Amount: " + product.getProductTotalAmount());
+            Menu.menuProductDetail();
+            productQuantity = UtilitiesView.askInteger(reader, "Quantity?");
+            if( productQuantity > 1){
+                product.setProductTotalAmount(productQuantity * product.getPrice());
+                System.out.println(" New amount: " + product.getProductTotalAmount());
+            }else{
+                if(productQuantity == 0 || productQuantity < 1){
+                    System.out.println("Quantity match be greater than 0 ");
+                }
+            }
+            int command = UtilitiesView.askInteger(reader, "Write option?");
+            if(command == 1){
+                break;
+            }else{
+                if(command == 0){
+                    //TODO add Product to basket
+                    System.out.println("Not implemented the add to basket");
+                }
+            }
+        }
+
     }
 
     // Not implemented jet.
