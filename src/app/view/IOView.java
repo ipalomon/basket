@@ -1,11 +1,12 @@
 package app.view;
 
+import app.tests.ProductTest;
+
 import java.util.Scanner;
 
 public class IOView {
     public static void callMainMenu(){
         Scanner reader = new Scanner(System.in);
-
         while(true){
             Menu.mainMenu();
             int command = UtilitiesView.askInteger(reader, "Chose option?");
@@ -22,8 +23,8 @@ public class IOView {
                 System.out.println("Not implemented jet.");
             } else if(command == 0){
                 // Test
+                ProductTest.productTest();
             } else System.out.println("Unknown command");
         }
     }
-
 }
