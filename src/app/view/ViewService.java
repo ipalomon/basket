@@ -40,7 +40,6 @@ public class ViewService {
             }else{
                 if(command == 0){
                     //TODO add Product to basket
-                    System.out.println("Not implemented the add to basket");
                 }
             }
         }
