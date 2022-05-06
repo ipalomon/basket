@@ -1,5 +1,6 @@
 package app.view;
 
+import app.basket.frontcontroller.BasketFrontController;
 import app.product.model.Product;
 
 import java.util.HashMap;
@@ -7,13 +8,14 @@ import java.util.Scanner;
 
 import static app.product.controller.ProductController.createFakeProducts;
 
+
 public class ViewService {
     // Load product detail from de product list selected: Name, Description and  price
     public static void loopProductDetail(Scanner reader, Product product){
         // Call the ViewController for load the fake data from ProductController
         // TODO load product detail from product controller by fake data
         String productQuantityStr = "1";
-        int productQuantity = 1;
+        Double productQuantity = 1.0;
         while (true){
             System.out.println("Id: " + product.getProductId());
             System.out.println("Name: " + product.getName());
@@ -23,13 +25,13 @@ public class ViewService {
 
             productQuantityStr = UtilitiesView.ask(reader, "Quantity? " + productQuantity);
             if(productQuantityStr.equals("")){
-                productQuantity = 1;
+                productQuantity = 1.0;
             }
-            if( productQuantity > 1){
+            if( productQuantity > 1.0){
                 product.setProductTotalAmount(productQuantity * product.getPrice());
                 System.out.println(" New amount: " + product.getProductTotalAmount());
             }else{
-                if(productQuantity == 0 || productQuantity < 1){
+                if(productQuantity <= 0 ){
                     System.out.println("Quantity match be greater than 0 ");
                 }
             }
@@ -40,6 +42,7 @@ public class ViewService {
             }else{
                 if(command == 0){
                     //TODO add Product to basket
+                    HashMap<String, String> response = BasketFrontController.addProductToBasket(product, productQuantity);
                 }
             }
         }

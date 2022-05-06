@@ -8,15 +8,16 @@ public class Basket {
     private int basketId;
     private int userId;
     // productId, productQuantity
-    private HashMap<Product, Double> productsListBasket;
+    private HashMap<int, Double> productsListBasket;
+    private Product product;
 
     public Basket() {
     }
 
-    public Basket(int basketId, int userId, HashMap<Product, Double> productsListBasket) {
+    public Basket(int basketId, int userId, HashMap<int, Double> productsListBasket) {
         this.basketId = basketId;
         this.userId = userId;
-        this.productsListBasket = new HashMap<>();
+        this.productsListBasket = new HashMap<int, Double>();
     }
 
     public int getBasketId() {
@@ -27,10 +28,6 @@ public class Basket {
         return this.userId;
     }
 
-    public HashMap<Product, Double> getProductsListBasket() {
-        return this.productsListBasket;
-    }
-
     public void setBasketId(int basketId) {
         this.basketId = basketId;
     }
@@ -39,16 +36,10 @@ public class Basket {
         this.userId = userId;
     }
 
-    public void addProductToBasket(Product product, Double productQuantity) {
-        this.productsListBasket.put(product, productQuantity);
-    }
 
     // TODO delete basket from user need the user id
     public void deleteProductFromBasket(Product product) {
         this.productsListBasket.remove(product);
     }
-    // TODO need the user id
-    public void changeQuantityOfProduct(Product product, Double quantity) {
-        this.productsListBasket.replace(product, quantity);
-    }
+
 }
