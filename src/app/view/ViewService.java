@@ -3,6 +3,7 @@ package app.view;
 import app.basket.frontcontroller.BasketFrontController;
 import app.product.model.Product;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class ViewService {
     // Load product detail from de product list selected: Name, Description and  price
     public static void loopProductDetail(Scanner reader, Product product){
         // Call the ViewController for load the fake data from ProductController
-        // TODO load product detail from product controller by fake data
+        // load product detail from product controller by fake data
         String productQuantityStr = "1";
         Double productQuantity = 1.0;
         while (true){
@@ -55,9 +56,8 @@ public class ViewService {
 
         while (true){
             // Call the ViewController for load the fake data from ProductController
-            HashMap<Integer,Product> products = createFakeProducts();
-
-            for(Product product: products.values()){
+            ArrayList<Product> products = createFakeProducts();
+            for(Product product: products){
                 System.out.println("Product Id: "+product.getProductId()+ " " + product.getName());
             }
             Menu.menuProductsList();
@@ -65,9 +65,12 @@ public class ViewService {
             if(command == 0){
                 break;
             }else{
-                if(products.containsKey(command) ){
-                    Product product = products.get(command);
-                    loopProductDetail(reader, product);
+                for(Product product: products){
+                    // for each product search de id if it is found show product detail
+                    if(product.getProductId() == command ){
+                        loopProductDetail(reader, product);
+                        break;
+                    }
                 }
             }
         }

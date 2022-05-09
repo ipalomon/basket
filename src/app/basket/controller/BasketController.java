@@ -6,10 +6,10 @@ import app.product.model.Product;
 import java.util.HashMap;
 
 public class BasketController {
-    public static HashMap<String, String> addProductToBasket(Product product, Double quantity){
+    public static HashMap<String, String> addProductToBasket(Product product){
         HashMap<String, String> response = new HashMap<>();
         response.put("status", "error");
-        boolean addProduct = BasketServices.addProductToBasketService(product, quantity);
+        boolean addProduct = BasketServices.addProductToBasketService(product);
 
         if(addProduct){
             response.put("status", "OK");

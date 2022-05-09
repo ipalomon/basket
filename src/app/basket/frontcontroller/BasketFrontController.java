@@ -7,6 +7,6 @@ import java.util.HashMap;
 
 public class BasketFrontController {
     public static HashMap<String, String> addProductToBasket(Product product, Double quantity){
-        return BasketController.addProductToBasket(product, quantity);
+        return BasketController.addProductToBasket(product);
     }
 }

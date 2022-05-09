@@ -5,27 +5,34 @@ import app.product.model.Product;
 import app.services.GenerateUUId;
 import app.user.controller.UserController;
 import app.user.model.User;
+import app.user.services.UserService;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class BasketServices {
-    // Revisar que peta porque un usuario tiene un basket con varios productos y cada uno tiene una cantidad y un total y desopues esta el total a pagar
-    public static boolean addProductToBasketService(Product product, Double quantity){
-        HashMap<int, User> users = UserController.createFakeUsers();
 
-        int newIdBasket = GenerateUUId.generateUUId();
+    public static boolean addProductToBasketService(Product product){
+        ArrayList<User> users = UserController.createFakeUsers();
+        int idUser = 9876;
+        User userCurrent = UserService.getCurrentUserFromArrayUsers(users, idUser);
 
-        HashMap<int, Double> productQuantity = new HashMap<int, Double>();
+        // The user no has session
+        if(userCurrent != null){
+            int newIdBasket = GenerateUUId.generateUUId();
 
-        productQuantity.put(product.getProductId(), quantity);
-        Basket basket = new Basket(newIdBasket, users.get(9876).getUserId(), productQuantity);
+            ArrayList<Product> products = new ArrayList<>();
+            products.add(product);
 
-        addBasketToUser(users.get(9876).getUserId(), users, basket);
+            Basket basket = new Basket(newIdBasket, userCurrent.getUserId(), products);
 
+            addBasketToUser(userCurrent, basket);
+        }else{
+            return false;
+        }
         return true;
     }
 
-    public static void addBasketToUser(int userId, HashMap<int, User> users, Basket basket){
-        users.get(userId).setBasket(basket);
+    public static void addBasketToUser(User user, Basket basket){
+        user.setBasket(basket);
     }
 }

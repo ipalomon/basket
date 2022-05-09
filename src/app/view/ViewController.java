@@ -1,9 +1,5 @@
 package app.view;
 
-import app.product.controller.ProductController;
-import app.product.model.Product;
-
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class ViewController {
