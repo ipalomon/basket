@@ -13,9 +13,9 @@ public class ProductTest {
     }
 
     public static void createFakeProducts(HashMap<Integer, Product> productsTest) {
-        Product product1 = new Product(500, "vino", "vino blanco", 4.5, 15);
-        Product product2 = new Product(501, "vino", "vino tinto", 10, 25);
-        Product product3 = new Product(502, "pan", "pan integral", 0.5, 50);
+        Product product1 = new Product(500, "vino", "vino blanco", 4.5);
+        Product product2 = new Product(501, "vino", "vino tinto", 10);
+        Product product3 = new Product(502, "pan", "pan integral", 0.5);
 
         productsTest.put(product1.getProductId(), product1);
         productsTest.put(product2.getProductId(), product2);
