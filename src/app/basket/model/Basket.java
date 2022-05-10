@@ -8,15 +8,17 @@ import app.product.model.Product;
 public class Basket {
     private int basketId;
     private int userId;
-    private ArrayList<Product> productsListBasket;
+    // productId, productQuantity
+    private HashMap<int, Double> productsListBasket;
+    private Product product;
 
     public Basket() {
     }
 
-    public Basket(int basketId, int userId, ArrayList<Product> products) {
+    public Basket(int basketId, int userId, HashMap<int, Double> productsListBasket) {
         this.basketId = basketId;
         this.userId = userId;
-        this.productsListBasket = new ArrayList<>();
+        this.productsListBasket = new HashMap<int, Double>();
     }
 
     public int getBasketId() {

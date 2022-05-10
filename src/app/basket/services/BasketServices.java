@@ -8,11 +8,13 @@ import app.user.model.User;
 import app.user.services.UserService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BasketServices {
 
-    public static boolean addProductToBasketService(Product product){
+    public static boolean addProductToBasketService(Product product, Double quantity){
         ArrayList<User> users = UserController.createFakeUsers();
+        // Take a current User
         int idUser = 9876;
         User userCurrent = UserService.getCurrentUserFromArrayUsers(users, idUser);
 
@@ -20,8 +22,8 @@ public class BasketServices {
         if(userCurrent != null){
             int newIdBasket = GenerateUUId.generateUUId();
 
-            ArrayList<Product> products = new ArrayList<>();
-            products.add(product);
+            HashMap<int, Double> products = new HashMap<int, Double>();
+            products.put(product.getProductId(), quantity);
 
             Basket basket = new Basket(newIdBasket, userCurrent.getUserId(), products);
 

@@ -16,7 +16,7 @@ public class ViewService {
         // Call the ViewController for load the fake data from ProductController
         // load product detail from product controller by fake data
         String productQuantityStr = "1";
-        Double productQuantity = 1.0;
+        double productQuantity = 1.0;
         while (true){
             System.out.println("Id: " + product.getProductId());
             System.out.println("Name: " + product.getName());
@@ -27,15 +27,16 @@ public class ViewService {
             productQuantityStr = UtilitiesView.ask(reader, "Quantity? " + productQuantity);
             if(productQuantityStr.equals("")){
                 productQuantity = 1.0;
-            }
-            if( productQuantity > 1.0){
+            }else{
+                productQuantity = Double.parseDouble(productQuantityStr);
                 product.setProductTotalAmount(productQuantity * product.getPrice());
                 System.out.println(" New amount: " + product.getProductTotalAmount());
-            }else{
-                if(productQuantity <= 0 ){
-                    System.out.println("Quantity match be greater than 0 ");
-                }
             }
+
+            if(productQuantity <= 0 ){
+                System.out.println("Quantity match be greater than 0 ");
+            }
+
             Menu.menuProductDetail();
             int command = UtilitiesView.askInteger(reader, "Chose 0 Add to basket or 1 return");
             if(command == 1){
@@ -44,6 +45,9 @@ public class ViewService {
                 if(command == 0){
                     //TODO add Product to basket
                     HashMap<String, String> response = BasketFrontController.addProductToBasket(product, productQuantity);
+                    for (String responses :response.values()) {
+                        System.out.println(responses);
+                    }
                 }
             }
         }
