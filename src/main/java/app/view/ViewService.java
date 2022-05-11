@@ -2,6 +2,7 @@ package main.java.app.view;
 
 import main.java.app.basket.frontcontroller.BasketFrontController;
 import main.java.app.product.model.Product;
+import main.java.app.user.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import static main.java.app.product.controller.ProductController.createFakeProdu
 
 public class ViewService {
     // Load product detail from de product list selected: Name, Description and  price
-    public static void loopProductDetail(Scanner reader, Product product){
+    public static void loopProductDetail(Scanner reader, Product product, ArrayList<User> users){
         // Call the ViewController for load the fake data from ProductController
         // load product detail from product controller by fake data
         String productQuantityStr = "1";
@@ -43,8 +44,7 @@ public class ViewService {
                 break;
             }else{
                 if(command == 0){
-                    //TODO add Product to basket
-                    HashMap<String, String> response = BasketFrontController.addProductToBasket(product, productQuantity);
+                    HashMap<String, String> response = BasketFrontController.addProductToBasket(product, productQuantity, users);
                     for (String responses :response.values()) {
                         System.out.println(responses);
                     }
@@ -56,7 +56,7 @@ public class ViewService {
 
     // Load the product list
     // Call de menu option for a product list: Add to basket or return to back menu
-    public static void loopMenuProductList(Scanner reader){
+    public static void loopMenuProductList(Scanner reader, ArrayList<User> users){
 
         while (true){
             // Call the ViewController for load the fake data from ProductController
@@ -66,14 +66,35 @@ public class ViewService {
             }
             Menu.menuProductsList();
             int command = app.view.UtilitiesView.askInteger(reader, "Write option? Or type id for see the product detail");
-            if(command == 0){
+            if(command == 1){
                 break;
             }else{
                 for(Product product: products){
                     // for each product search de id if it is found show product detail
                     if(product.getProductId() == command ){
-                        loopProductDetail(reader, product);
+                        loopProductDetail(reader, product, users);
                         break;
+                    }
+                }
+            }
+        }
+    }
+
+    public static void loopViewBasket(Scanner reader, ArrayList<User> user){
+        while(true){
+            HashMap<String, String> response = BasketFrontController.ViewProductToBasket(user);
+            System.out.println(response);
+            Menu.menuBasket();
+            int command = app.view.UtilitiesView.askInteger(reader, "Write option?");
+
+            if(command == 3){
+                break;
+            }else{
+                if(command == 1){
+                    // Delete
+                }else{
+                    if(command == 2){
+                        //Pay
                     }
                 }
             }

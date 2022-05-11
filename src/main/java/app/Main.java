@@ -14,6 +14,6 @@ public class Main {
         System.out.println("\nStarting BASKET, hello! " + user.get(1).getName());
 
         //we are starting the main loop
-        IOView.callMainMenu();
+        IOView.callMainMenu(user);
     }
 }
