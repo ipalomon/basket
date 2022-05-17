@@ -1,13 +1,11 @@
-package main.java.app.basket.services;
+package app.basket.services;
 
+import app.basket.model.Basket;
+import app.product.model.Product;
 import app.services.GenerateUUId;
 
-import main.java.app.Main;
-import main.java.app.basket.model.Basket;
-import main.java.app.product.model.Product;
-import main.java.app.user.controller.UserController;
-import main.java.app.user.model.User;
-import main.java.app.user.services.UserService;
+import app.user.model.User;
+import app.user.services.UserService;
 
 import java.util.ArrayList;
 import java.util.HashMap;

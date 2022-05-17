@@ -1,7 +1,6 @@
-package main.java.app.user.model;
+package app.user.model;
 
-
-import main.java.app.basket.model.Basket;
+import app.basket.model.Basket;
 
 public final class User {
     private int userId;

@@ -1,4 +1,4 @@
-package main.java.app.product.model;
+package app.product.model;
 
 public final class Product {
     private int productId;

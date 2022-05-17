@@ -1,4 +1,4 @@
-package main.java.app.product.util;
+package app.product.util;
 
 public class ProductUtilities {
 }

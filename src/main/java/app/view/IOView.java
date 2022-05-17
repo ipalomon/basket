@@ -1,7 +1,7 @@
-package main.java.app.view;
+package app.view;
 
-import main.java.app.tests.ProductTest;
-import main.java.app.user.model.User;
+import app.tests.ProductTest;
+import app.user.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class IOView {
         Scanner reader = new Scanner(System.in);
 
         while(true){
-            Menu.mainMenu();
+            main.java.app.view.Menu.mainMenu();
             int command = app.view.UtilitiesView.askInteger(reader, "Chose option?");
             if (command == 5) {
                 break;

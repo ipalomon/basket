@@ -1,8 +1,7 @@
-package main.java.app.basket.model;
+package app.basket.model;
 
-import main.java.app.product.model.Product;
+import app.product.model.Product;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -19,7 +18,7 @@ public class Basket {
     public Basket(int basketId, int userId, HashMap<Integer, Double> productsListBasket) {
         this.basketId = basketId;
         this.userId = userId;
-        this.productsListBasket = new HashMap<>();
+        this.productsListBasket = productsListBasket;
     }
 
     public int getBasketId() {

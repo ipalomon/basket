@@ -1,9 +1,7 @@
-package main.java.app.user.controller;
+package app.user.controller;
 
-
-
-import main.java.app.basket.model.Basket;
-import main.java.app.user.model.User;
+import app.basket.model.Basket;
+import app.user.model.User;
 
 import java.util.ArrayList;
 

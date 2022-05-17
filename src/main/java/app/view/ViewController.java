@@ -1,7 +1,6 @@
-package main.java.app.view;
+package app.view;
 
-import main.java.app.user.model.User;
-import main.java.app.view.ViewService;
+import app.user.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
-package main.java.app.tests;
+package app.tests;
 
-import main.java.app.product.model.Product;
+import app.product.model.Product;
 
 import java.util.HashMap;
 

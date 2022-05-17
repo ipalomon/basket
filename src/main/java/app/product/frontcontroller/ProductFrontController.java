@@ -1,4 +1,4 @@
-package main.java.app.product.frontcontroller;
+package app.product.frontcontroller;
 
 public class ProductFrontController {
 }

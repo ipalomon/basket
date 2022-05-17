@@ -1,4 +1,4 @@
-package main.java.app.product.test;
+package app.product.test;
 
 public class ProductTest {
 }

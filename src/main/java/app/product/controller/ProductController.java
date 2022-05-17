@@ -1,13 +1,13 @@
-package main.java.app.product.controller;
+package app.product.controller;
 
 
-import main.java.app.product.model.Product;
+import app.product.model.Product;
 
 import java.util.ArrayList;
 
 public class ProductController {
 
-    static ArrayList<Product> products = new ArrayList<Product>();
+    static ArrayList<Product> products = new ArrayList<>();
 
     public static ArrayList<Product> createFakeProducts() {
         Product product1 = new Product(456, "Car", "The blue car", 1200.45);

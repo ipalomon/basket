@@ -1,9 +1,9 @@
-package main.java.app.basket.controller;
+package app.basket.controller;
 
-import main.java.app.basket.model.Basket;
-import main.java.app.basket.services.BasketServices;
-import main.java.app.product.model.Product;
-import main.java.app.user.model.User;
+import app.basket.model.Basket;
+import app.basket.services.BasketServices;
+import app.product.model.Product;
+import app.user.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;

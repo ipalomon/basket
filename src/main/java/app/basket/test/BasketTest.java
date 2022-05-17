@@ -1,4 +1,4 @@
-package main.java.app.basket.test;
+package app.basket.test;
 
 public class BasketTest {
 }

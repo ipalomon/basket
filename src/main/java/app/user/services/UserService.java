@@ -1,7 +1,7 @@
-package main.java.app.user.services;
+package app.user.services;
 
 
-import main.java.app.user.model.User;
+import app.user.model.User;
 
 import java.util.ArrayList;
 
