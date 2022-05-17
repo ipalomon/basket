@@ -2,7 +2,7 @@ package app.view;
 
 import app.basket.frontcontroller.BasketFrontController;
 import app.product.model.Product;
-import app.user.model.User;
+import app.user.model.Users;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import static app.product.controller.ProductController.createFakeProducts;
 
 public class ViewService {
     // Load product detail from de product list selected: Name, Description and  price
-    public static void loopProductDetail(Scanner reader, Product product, ArrayList<User> users){
+    public static void loopProductDetail(Scanner reader, Product product, ArrayList<Users> users){
         // Call the ViewController for load the fake data from ProductController
         // load product detail from product controller by fake data
         String productQuantityStr;
@@ -56,7 +56,7 @@ public class ViewService {
 
     // Load the product list
     // Call de menu option for a product list: Add to basket or return to back menu
-    public static void loopMenuProductList(Scanner reader, ArrayList<User> users){
+    public static void loopMenuProductList(Scanner reader, ArrayList<Users> users){
 
         while (true){
             // Call the ViewController for load the fake data from ProductController
@@ -80,9 +80,9 @@ public class ViewService {
         }
     }
 
-    public static void loopViewBasket(Scanner reader, ArrayList<User> user){
+    public static void loopViewBasket(Scanner reader, ArrayList<Users> users){
         while(true){
-            HashMap<String, String> response = BasketFrontController.ViewProductToBasket(user);
+            HashMap<String, String> response = BasketFrontController.ViewProductToBasket(users);
             System.out.println(response);
             main.java.app.view.Menu.menuBasket();
             int command = app.view.UtilitiesView.askInteger(reader, "Write option?");

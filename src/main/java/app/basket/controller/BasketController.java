@@ -3,13 +3,13 @@ package app.basket.controller;
 import app.basket.model.Basket;
 import app.basket.services.BasketServices;
 import app.product.model.Product;
-import app.user.model.User;
+import app.user.model.Users;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BasketController {
-    public static HashMap<String, String> addProductToBasket(Product product, Double quantity, ArrayList<User> users){
+    public static HashMap<String, String> addProductToBasket(Product product, Double quantity, ArrayList<Users> users){
         HashMap<String, String> response = new HashMap<>();
         response.put("status", "error");
         response.put("code", "409");
@@ -25,13 +25,13 @@ public class BasketController {
         return response;
     }
 
-    public static HashMap<String, String> viewProductToBasket(ArrayList<User> user){
+    public static HashMap<String, String> viewProductToBasket(ArrayList<Users> users){
         HashMap<String, String> response = new HashMap<>();
         response.put("status", "error");
         response.put("code", "409");
         response.put("message", "Invalid structure");
 
-        Basket basket = BasketServices.loadFromUser(user);
+        Basket basket = BasketServices.loadFromUser(users);
 
         if(basket != null){
             response.put("status", "OK");

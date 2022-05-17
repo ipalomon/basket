@@ -1,23 +1,23 @@
 package app.user.controller;
 
 import app.basket.model.Basket;
-import app.user.model.User;
+import app.user.model.Users;
 
 import java.util.ArrayList;
 
 public class UserController {
 
-    static ArrayList<User> users = new ArrayList<>();
+    static ArrayList<Users> users = new ArrayList<>();
 
-    public static ArrayList<User> createFakeUsers() {
+    public static ArrayList<Users> createFakeUsers() {
         Basket basket1 = new Basket();
-        User user1 = new User(345, "Pepe", "Lopez",  basket1);
+        Users users1 = new Users(345, "Pepe", "Lopez",  basket1);
 
         Basket basket2 = new Basket();
-        User user2 = new User(9876, "Jos", "Angular",  basket2);
+        Users users2 = new Users(9876, "Jos", "Angular",  basket2);
 
-        users.add( user1);
-        users.add( user2);
+        users.add(users1);
+        users.add(users2);
 
         return users;
     }

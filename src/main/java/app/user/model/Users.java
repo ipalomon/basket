@@ -2,16 +2,16 @@ package app.user.model;
 
 import app.basket.model.Basket;
 
-public final class User {
+public final class Users {
     private int userId;
     private String name;
     private String surname;
     private Basket basket;
 
-    public User() {
+    public Users() {
     }
 
-    public User(int userId, String name, String surname, Basket basket) {
+    public Users(int userId, String name, String surname, Basket basket) {
         this.userId = userId;
         this.name = name;
         this.surname = surname;
@@ -52,7 +52,7 @@ public final class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Users{" +
                 "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +

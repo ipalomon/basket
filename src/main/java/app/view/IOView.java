@@ -1,13 +1,13 @@
 package app.view;
 
 import app.tests.ProductTest;
-import app.user.model.User;
+import app.user.model.Users;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IOView {
-    public static void callMainMenu(ArrayList<User> users){
+    public static void callMainMenu(ArrayList<Users> users){
         Scanner reader = new Scanner(System.in);
 
         while(true){

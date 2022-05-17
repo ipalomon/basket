@@ -13,7 +13,7 @@
                       value="org.h2.Driver" />
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:h2:tcp://localhost/~/baketBBDD/baketBBDD" />
-            <property name="javax.persistence.jdbc.user"
+            <property name="javax.persistence.jdbc.users"
                       value="ipalomon" />
             <property name="javax.persistence.jdbc.password"
                       value="1234" />
