@@ -19,7 +19,7 @@ public class Basket {
     public Basket(int basketId, int userId, HashMap<Integer, Double> productsListBasket) {
         this.basketId = basketId;
         this.userId = userId;
-        this.productsListBasket = new HashMap<Integer, Double>();
+        this.productsListBasket = new HashMap<>();
     }
 
     public int getBasketId() {
@@ -38,6 +38,15 @@ public class Basket {
         this.userId = userId;
     }
 
+    @Override
+    public String toString() {
+        return "Basket{" +
+                "basketId=" + basketId +
+                ", userId=" + userId +
+                ", productsListBasket=" + productsListBasket +
+                ", product=" + product +
+                '}';
+    }
 
     // TODO delete basket from user need the user id
     public void deleteProductFromBasket(Product product) {
