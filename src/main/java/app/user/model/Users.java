@@ -35,11 +35,13 @@ public final class Users {
         this.password = password;
     }
 
-    public Users(int userId, String name, String surname, Basket basket) {
+    public Users(int userId, String name, String surname, Basket basket, String username, String password) {
         this.userId = userId;
         this.name = name;
         this.surname = surname;
         this.basket = basket;
+        this.username = username;
+        this.password = password;
     }
 
     public String getName() {
