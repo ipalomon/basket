@@ -2,6 +2,7 @@ package app.basket.services;
 
 import app.basket.model.Basket;
 import app.product.model.Product;
+import app.repository.basket.BasketRepository;
 import app.services.GenerateUUId;
 
 import app.user.model.Users;
@@ -22,7 +23,9 @@ public class BasketServices {
             int newIdBasket = GenerateUUId.generateUUId();
 
             HashMap<Integer, Double> products = new HashMap<>();
+            // Llama r al repositorio psaandole el objet y guardarlo.
             products.put(product.getProductId(), quantity);
+            BasketRepository.create(product);
 
             new Basket(newIdBasket, usersCurrent.getUserId(), products);
         }else{
